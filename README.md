@@ -32,7 +32,6 @@ powertb.enable()
 
 # Installation
 
-TODO:
 ```shell
 pip install powertb
 ```

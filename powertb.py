@@ -25,9 +25,15 @@ def enable():
     sys.excepthook = handle_exception
 
 
+def print_exc():
+    """ Print the current active exception. """
+    handle_exception(*sys.exc_info())
+
+
 def handle_exception(exc_type, exc_value, exc_tb):
     """ Handle an exception. """
     formatter = pygments.formatters.Terminal256Formatter(style='monokai')
+    maxsize = 300
 
     # print traceback:
     tb_text = ''.join(traceback.format_exception(exc_type, exc_value, exc_tb))
@@ -54,5 +60,14 @@ def handle_exception(exc_type, exc_value, exc_tb):
         values = inspect.getargvalues(frame.frame)
         print('Variables:')
         for name, value in sorted(values.locals.items()):
-            print('    ', name, '=', value, ' #', type(value))
+            type_text = str(type(value))
+            value_text = clip_text(str(value), maxsize)
+            print('    ', name, ':', type_text, '=', value_text)
         print()
+
+
+def clip_text(text, maxsize):
+    """ Limit the text to a certain length, inserting dots in the middle. """
+    if len(text) > maxsize:
+        text = text[:maxsize//2] + '...' + text[-maxsize//2:]
+    return text

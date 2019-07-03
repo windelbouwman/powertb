@@ -40,7 +40,7 @@ pip install powertb
 
 There is a long list of available traceback enhancers. This is the list, in alphabetical order:
 
-- [backtrace](https://github.com/nir0s/backtrace) -> Pretty versatile and offers options
-- [colored-traceback](https://pypi.org/project/colored-traceback/) -> colors tracebacks with pygments
-- [ptb](https://github.com/chillaranand/ptb) -> Add context variables to tracebacks
+- [backtrace](https://github.com/nir0s/backtrace) : Pretty versatile and offers options
+- [colored-traceback](https://pypi.org/project/colored-traceback/) : colors tracebacks with pygments
+- [ptb](https://github.com/chillaranand/ptb) : Add context variables to tracebacks
 

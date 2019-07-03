@@ -1,1 +1,4 @@
 __pycache__
+build
+dist
+powertb.egg-info
